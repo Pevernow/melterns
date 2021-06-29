@@ -4,6 +4,8 @@
 local modpath = minetest.get_modpath("metal_melter")
 metal_melter = {}
 
+metal_melter.S = minetest.get_translator("metal_melter")
+
 -- Melting database
 dofile(modpath.."/meltable.lua")
 

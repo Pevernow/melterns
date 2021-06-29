@@ -1,3 +1,5 @@
+local S = tinkering.S
+
 
 local modifiers = {
 	flint = {
@@ -11,7 +13,7 @@ local modifiers = {
 		binding = {increase = 0.00, uses = 0},
 		rod = {increase = 0.00, uses = 0},
 		tags = {
-			{name = "cheap", description = "Cheap"}
+			{name = "cheap", description = S("Cheap")}
 		}
 	},
 	wood = {
@@ -25,8 +27,8 @@ local modifiers = {
 		binding = {increase = 0.00, uses = 0},
 		rod = {increase = 0.00, uses = 0},
 		tags = {
-			{name = "cheap", description = "Cheap"},
-			{name = "wooden", description = "Wooden"}
+			{name = "cheap", description = S("Cheap")},
+			{name = "wooden", description = S("Wooden")}
 		}
 	},
 	stone = {
@@ -40,8 +42,8 @@ local modifiers = {
 		binding = {increase = 0.05, uses = -1},
 		rod = {increase = 0.05, uses = -1},
 		tags = {
-			{name = "economic", description = "Economic"},
-			{name = "stonebound", description = "Stonebound"}
+			{name = "economic", description = S("Economic")},
+			{name = "stonebound", description = S("Stonebound")}
 		}
 	},
 	steel = {
@@ -55,8 +57,8 @@ local modifiers = {
 		binding = {increase = 0.05, uses = 3},
 		rod = {increase = 0.10, uses = 5},
 		tags = {
-			{name = "economic", description = "Economic"},
-			{name = "metal", description = "Metallic"}
+			{name = "economic", description = S("Economic")},
+			{name = "metal", description = S("Metallic")}
 		}
 	},
 	copper = {
@@ -70,7 +72,7 @@ local modifiers = {
 		binding = {increase = 0.05, uses = 3},
 		rod = {increase = 0.06, uses = 5},
 		tags = {
-			{name = "cold", description = "Cold"}
+			{name = "cold", description = S("Cold")}
 		}
 	},
 	tin = {
@@ -84,7 +86,7 @@ local modifiers = {
 		binding = {increase = 0.02, uses = -2},
 		rod = {increase = 0.06, uses = -3},
 		tags = {
-			{name = "cheap", description = "Cheap"}
+			{name = "cheap", description = S("Cheap")}
 		}
 	},
 	bronze = {
@@ -110,8 +112,8 @@ local modifiers = {
 		binding = {increase = 0.10, uses = 10},
 		rod = {increase = 0.15, uses = 10},
 		tags = {
-			{name = "gem", description = "Precious"},
-			{name = "expensive", description = "Expensive"}
+			{name = "gem", description = S("Precious")},
+			{name = "expensive", description = S("Expensive")}
 		}
 	},
 	gold = {
@@ -125,8 +127,8 @@ local modifiers = {
 		binding = {increase = -0.07, uses = -10},
 		rod = {increase = -0.01, uses = -5},
 		tags = {
-			{name = "shiny", description = "Shiny"},
-			{name = "soft", description = "Soft"}
+			{name = "shiny", description = S("Shiny")},
+			{name = "soft", description = S("Soft")}
 		}
 	},
 	obsidian = {
@@ -140,7 +142,7 @@ local modifiers = {
 		binding = {increase = 0.10, uses = 15},
 		rod = {increase = 0.05, uses = 5},
 		tags = {
-			{name = "reinforced", description = "Reinforced"}
+			{name = "reinforced", description = S("Reinforced")}
 		}
 	},
 	lead = {
@@ -155,7 +157,7 @@ local modifiers = {
 		binding = {increase = 0.15, uses = 1},
 		rod = {increase = 0.05, uses = -5},
 		tags = {
-			{name = "toxic", description = "Toxic"}
+			{name = "toxic", description = S("Toxic")}
 		}
 	},
 	chromium = {
@@ -170,7 +172,7 @@ local modifiers = {
 		binding = {increase = 0.15, uses = 1},
 		rod = {increase = -0.05, uses = 2},
 		tags = {
-			{name = "shiny", description = "Shiny"}
+			{name = "shiny", description = S("Shiny")}
 		}
 	},
 	zinc = {
@@ -185,7 +187,7 @@ local modifiers = {
 		binding = {increase = -0.05, uses = 1},
 		rod = {increase = -0.05, uses = 2},
 		tags = {
-			{name = "metal", description = "Metallic"}
+			{name = "metal", description = S("Metallic")}
 		}
 	},
 	silver = {
@@ -199,8 +201,8 @@ local modifiers = {
 		binding = {increase = -0.05, uses = 10},
 		rod = {increase = -0.05, uses = 10},
 		tags = {
-			{name = "durable", description = "Durable"},
-			{name = "shiny", description = "Shiny"}
+			{name = "durable", description = S("Durable")},
+			{name = "shiny", description = S("Shiny")}
 		}
 	},
 	mithril = {
@@ -214,8 +216,8 @@ local modifiers = {
 		binding = {increase = 0.05, uses = 15},
 		rod = {increase = -0.10, uses = 15, damage = {fleshy = 8}},
 		tags = {
-			{name = "durable", description = "Durable"},
-			{name = "lethal", description = "Lethal"}
+			{name = "durable", description = S("Durable")},
+			{name = "lethal", description = S("Lethal")}
 		}
 	},
 	-- Modifier items
@@ -224,7 +226,7 @@ local modifiers = {
 		increase = 0.25,
 		count = 1,
 		tags = {
-			{name = "diamond", description = "Diamond"}
+			{name = "diamond", description = S("Diamond")}
 		}
 	},
 	-- Templates
@@ -261,48 +263,48 @@ local modifiers = {
 
 tinkering.materials = {
 	-- Materials
-	flint    = {name = "Flint",    default = "default:flint",    color = "#514E49", base = "item",               modifier = modifiers.flint},
-	wood     = {name = "Wood",     default = "wood",             color = "#634623", base = "group",              modifier = modifiers.wood},
-	stone    = {name = "Stone",    default = "stone",            color = "#8D8988", base = "group",              modifier = modifiers.stone},
-	obsidian = {name = "Obsidian", default = "default:obsidian", color = "#2C384E", base = "node",  cast = true, modifier = modifiers.obsidian},
+	flint    = {name = S("Flint"),    default = "default:flint",    color = "#514E49", base = "item",               modifier = modifiers.flint},
+	wood     = {name = S("Wood"),     default = "wood",             color = "#634623", base = "group",              modifier = modifiers.wood},
+	stone    = {name = S("Stone"),    default = "stone",            color = "#8D8988", base = "group",              modifier = modifiers.stone},
+	obsidian = {name = S("Obsidian"), default = "default:obsidian", color = "#2C384E", base = "node",  cast = true, modifier = modifiers.obsidian},
 
 	-- Metals
-	steel  = {name = "Steel",  default = "default:steel_ingot",  color = "#FFF",    base = "ingot", cast = true, modifier = modifiers.steel},
-	copper = {name = "Copper", default = "default:copper_ingot", color = "#E87945", base = "ingot", cast = true, modifier = modifiers.copper},
-	tin    = {name = "Tin",    default = "default:tin_ingot",    color = "#C1C1C1", base = "ingot", cast = true, modifier = modifiers.tin},
-	bronze = {name = "Bronze", default = "default:bronze_ingot", color = "#C14E19", base = "ingot", cast = true, modifier = modifiers.bronze},
-	gold   = {name = "Gold",   default = "default:gold_ingot",   color = "#FFFF54", base = "ingot", cast = true, modifier = modifiers.gold},
-	mese   = {name = "Mese",   default = "default:mese_crystal", color = "#FFFF02", base = "gem",   cast = true, modifier = modifiers.mese},
+	steel  = {name = S("Steel"),  default = "default:steel_ingot",  color = "#FFF",    base = "ingot", cast = true, modifier = modifiers.steel},
+	copper = {name = S("Copper"), default = "default:copper_ingot", color = "#E87945", base = "ingot", cast = true, modifier = modifiers.copper},
+	tin    = {name = S("Tin"),    default = "default:tin_ingot",    color = "#C1C1C1", base = "ingot", cast = true, modifier = modifiers.tin},
+	bronze = {name = S("Bronze"), default = "default:bronze_ingot", color = "#C14E19", base = "ingot", cast = true, modifier = modifiers.bronze},
+	gold   = {name = S("Gold"),   default = "default:gold_ingot",   color = "#FFFF54", base = "ingot", cast = true, modifier = modifiers.gold},
+	mese   = {name = S("Mese"),   default = "default:mese_crystal", color = "#FFFF02", base = "gem",   cast = true, modifier = modifiers.mese},
 
 	-- From moreores
-	silver  = {name = "Silver",  default = "moreores:silver_ingot",  color = "#D7E2E8", base = "ingot", cast = true, modifier = modifiers.silver},
-	mithril = {name = "Mithril", default = "moreores:mithril_ingot", color = "#6868D7", base = "ingot", cast = true, modifier = modifiers.mithril}
+	silver  = {name = S("Silver"),  default = "moreores:silver_ingot",  color = "#D7E2E8", base = "ingot", cast = true, modifier = modifiers.silver},
+	mithril = {name = S("Mithril"), default = "moreores:mithril_ingot", color = "#6868D7", base = "ingot", cast = true, modifier = modifiers.mithril}
 }
 
 tinkering.modifiers = {
-	diamond = {name = "Diamond", default = "default:diamond", modifier = modifiers.diamond}
+	diamond = {name = S("Diamond"), default = "default:diamond", modifier = modifiers.diamond}
 }
 
 -- Add mod-based materials
 minetest.register_on_mods_loaded(function ()
 	if minetest.get_modpath("technic") then
 		-- From technic
-		tinkering.materials["lead"]     = {name = "Lead",     default = "technic:lead_ingot",
+		tinkering.materials["lead"]     = {name = S("Lead"),     default = "technic:lead_ingot",
 			color = "#C6C6C6", base = "ingot", cast = true, modifier = modifiers.lead}
 
-		tinkering.materials["chromium"] = {name = "Chromium", default = "technic:chromium_ingot",
+		tinkering.materials["chromium"] = {name = S("Chromium"), default = "technic:chromium_ingot",
 			color = "#DFE8E8", base = "ingot", cast = true, modifier = modifiers.chromium}
 
-		tinkering.materials["zinc"]     = {name = "Zinc",     default = "technic:zinc_ingot",
+		tinkering.materials["zinc"]     = {name = S("Zinc"),     default = "technic:zinc_ingot",
 			color = "#CEE8EF", base = "ingot", cast = true, modifier = modifiers.zinc}
 	end
 
 	if minetest.get_modpath("elepower_dynamics") then
 		-- From elepower
-		tinkering.materials["lead"]     = {name = "Lead",     default = "elepower_dynamics:lead_ingot",
+		tinkering.materials["lead"]     = {name = S("Lead"),     default = "elepower_dynamics:lead_ingot",
 			color = "#C6C6C6", base = "ingot", cast = true, modifier = modifiers.lead}
 
-		tinkering.materials["zinc"]     = {name = "Zinc",     default = "elepower_dynamics:zinc_ingot",
+		tinkering.materials["zinc"]     = {name = S("Zinc"),     default = "elepower_dynamics:zinc_ingot",
 			color = "#CEE8EF", base = "ingot", cast = true, modifier = modifiers.zinc}
 	end
 end)

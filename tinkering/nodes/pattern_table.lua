@@ -1,3 +1,5 @@
+local S = tinkering.S
+
 pattern_table = {}
 
 function pattern_table.get_tool_type_list(ix, iy, mx)
@@ -139,7 +141,7 @@ local function on_receive_fields(pos, formname, fields, sender)
 end
 
 minetest.register_node("tinkering:pattern_table", {
-	description = "Pattern Table",
+	description = S("Pattern Table"),
 	tiles = {
 		"tinkering_pattern_bench.png", "tinkering_bench_bottom.png",
 		"tinkering_bench_side.png",    "tinkering_bench_side.png",

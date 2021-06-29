@@ -1,0 +1,13 @@
+# textdomain:metal_melter
+
+Ingot=
+Lump=
+Gem=
+Metal Caster=
+Heatbrick=
+Heatbricks=
+Heat Gravel=
+Heat Exchanger Plate=
+Casting Table=
+Heated Tank=
+Metal Melter=

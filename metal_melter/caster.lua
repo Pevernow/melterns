@@ -1,5 +1,7 @@
 -- Casts molten metals into a solid form
 
+local S = metal_melter.S
+
 metal_caster = {}
 
 metal_caster.max_coolant = 8000
@@ -9,9 +11,9 @@ metal_caster.max_metal = 16000
 metal_caster.spec = metal_melter.spec
 
 metal_caster.casts = {
-	ingot = {description = "Ingot", result = "ingot",   cost = 1, typenames = {"ingot"}},
-	lump  = {description = "Lump",  result = "lump",    cost = 2, typenames = {"lump"}},
-	gem   = {description = "Gem",   result = "crystal", cost = 1, typenames = {"crystal", "gem"}}
+	ingot = {description = S("Ingot"), result = "ingot",   cost = 1, typenames = {"ingot"}},
+	lump  = {description = S("Lump"),  result = "lump",    cost = 2, typenames = {"lump"}},
+	gem   = {description = S("Gem"),   result = "crystal", cost = 1, typenames = {"crystal", "gem"}}
 }
 
 local metal_cache = {}
@@ -491,7 +493,7 @@ end
 
 -- Register the caster
 minetest.register_node("metal_melter:metal_caster", {
-	description = "Metal Caster",
+	description = S("Metal Caster"),
 	tiles = {
 		"melter_side.png"..tube_entry, "melter_side.png"..tube_entry,
 		"melter_side.png"..tube_entry, "melter_side.png"..tube_entry,

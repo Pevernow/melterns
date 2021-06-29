@@ -3,6 +3,8 @@
 -- Default metals
 local metals = {"steel", "copper", "tin", "bronze", "gold", "mese", "obsidian", "lead", "chromium", "zinc", "silver", "mithril"}
 
+local S=fluidity.S
+
 for _,v in pairs(metals) do
 	fluidity.register_molten_metal(v)
 end
@@ -10,7 +12,7 @@ end
 -- Register florbs for all fluids
 fluidity.florbs.register_florb({
 	florb_name        = "florb",
-	florb_description = "Florb",
+	florb_description = S("Florb"),
 	capacity          = 1000,
 	tiles             = {"fluidity_florb.png", "fluidity_florb_mask.png"}
 })

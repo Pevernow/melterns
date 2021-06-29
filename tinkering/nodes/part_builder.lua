@@ -1,3 +1,5 @@
+local S = tinkering.S
+
 part_builder = {}
 
 function part_builder.get_formspec()
@@ -213,7 +215,7 @@ local function on_receive_fields(pos, formname, fields, sender)
 end
 
 minetest.register_node("tinkering:part_builder", {
-	description = "Part Builder",
+	description = S("Part Builder"),
 	tiles = {
 		"tinkering_blank_pattern.png",  "tinkering_bench_bottom.png",
 		"tinkering_bench_side.png",     "tinkering_bench_side.png",

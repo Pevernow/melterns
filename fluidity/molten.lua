@@ -2,6 +2,8 @@
 
 fluidity.molten_metals = {}
 
+local S = fluidity.S
+
 local function firstToUpper(str)
     return (str:gsub("^%l", string.upper))
 end
@@ -20,7 +22,7 @@ function fluidity.register_molten_metal(metal)
 	fluidity.molten_metals[metal] = mod_name..":"..metal.."_source"
 
 	minetest.register_node(mod_name..":"..metal.."_source", {
-		description = "Molten "..description.." Source",
+		description = S("Molten @1 Source",description),
 		drawtype = "liquid",
 		tiles = {
 			{
@@ -65,7 +67,7 @@ function fluidity.register_molten_metal(metal)
 	})
 
 	minetest.register_node(mod_name..":"..metal.."_flowing", {
-		description = "Flowing Molten "..description,
+		description = S("Flowing Molten @1",description),
 		drawtype = "flowingliquid",
 		tiles = {"fluidity_"..metal..".png"},
 		special_tiles = {

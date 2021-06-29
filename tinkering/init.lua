@@ -6,6 +6,8 @@
 
 tinkering = rawget(_G, "tinkering") or {}
 
+tinkering.S = minetest.get_translator("tinkering")
+
 local modpath = minetest.get_modpath(minetest.get_current_modname())
 tinkering.modpath = modpath
 

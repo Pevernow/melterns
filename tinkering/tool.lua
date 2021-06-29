@@ -1,6 +1,8 @@
+local S = tinkering.S
+
 tinkering.tools = {
 	pick = {
-		description = "Pickaxe",
+		description = S("Pickaxe"),
 		groups = {"cracky"},
 		fleshy_decrement = 1,
 		components = {
@@ -15,7 +17,7 @@ tinkering.tools = {
 		}
 	},
 	axe = {
-		description = "Axe",
+		description = S("Axe"),
 		groups = {"choppy"},
 		fleshy_increment = 1,
 		components = {
@@ -30,7 +32,7 @@ tinkering.tools = {
 		}
 	},
 	sword = {
-		description = "Sword",
+		description = S("Sword"),
 		groups = {"snappy"},
 		fleshy_decrement = 0,
 		components = {
@@ -45,7 +47,7 @@ tinkering.tools = {
 		}
 	},
 	shovel = {
-		description = "Shovel",
+		description = S("Shovel"),
 		groups = {"crumbly"},
 		fleshy_decrement = 1,
 		components = {
@@ -62,12 +64,12 @@ tinkering.tools = {
 }
 
 tinkering.components = {
-	pickaxe_head = {description = "%s Pickaxe Head", material_cost = 2, image = tinkering.tools.pick.textures.main},
-	axe_head     = {description = "%s Axe Head",     material_cost = 2, image = tinkering.tools.axe.textures.main},
-	sword_blade  = {description = "%s Sword Blade",  material_cost = 2, image = tinkering.tools.sword.textures.main},
-	shovel_head  = {description = "%s Shovel Head",  material_cost = 2, image = tinkering.tools.shovel.textures.main},
-	tool_rod     = {description = "%s Tool Rod",     material_cost = 1, image = "tinkering_tool_rod.png"},
-	tool_binding = {description = "%s Tool Binding", material_cost = 2, image = "tinkering_tool_binding.png"}
+	pickaxe_head = {description = "%s "..S("Pickaxe Head"), material_cost = 2, image = tinkering.tools.pick.textures.main},
+	axe_head     = {description = "%s "..S("Axe Head"),     material_cost = 2, image = tinkering.tools.axe.textures.main},
+	sword_blade  = {description = "%s "..S("Sword Blade"),  material_cost = 2, image = tinkering.tools.sword.textures.main},
+	shovel_head  = {description = "%s "..S("Shovel Head"),  material_cost = 2, image = tinkering.tools.shovel.textures.main},
+	tool_rod     = {description = "%s "..S("Tool Rod"),     material_cost = 1, image = "tinkering_tool_rod.png"},
+	tool_binding = {description = "%s "..S("Tool Binding"), material_cost = 2, image = "tinkering_tool_binding.png"}
 }
 
 -- Create component for material

@@ -1,6 +1,8 @@
 
 fluidity.florbs = {}
 
+local S = fluidity.S
+
 local function get_itemdef_field(nodename, fieldname)
     if not minetest.registered_items[nodename] then
         return nil

@@ -6,6 +6,8 @@ fluidity = rawget(_G, "fluidity") or {}
 local mpath = minetest.get_modpath("fluidity")
 fluidity.modpath = mpath
 
+fluidity.S = minetest.get_translator("fluidity")
+
 function fluidity.fluid_short(str)
 	return string.lower(str):gsub("%s", "_")
 end

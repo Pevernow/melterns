@@ -1,3 +1,5 @@
+local S = tinkering.S
+
 tool_station = {}
 
 local tool_list_cache = nil
@@ -519,7 +521,7 @@ local function on_receive_fields(pos, formname, fields, sender)
 end
 
 minetest.register_node("tinkering:tool_station", {
-	description = "Tool Station",
+	description = S("Tool Station"),
 	tiles = {
 		"tinkering_workbench_top.png", "tinkering_bench_bottom.png",
 		"tinkering_bench_side.png",    "tinkering_bench_side.png",

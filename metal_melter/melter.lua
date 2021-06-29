@@ -1,5 +1,7 @@
 -- Melts metals using lava as a heat source.
 
+local S = metal_melter.S
+
 -- Max lava that can be held by the melter.
 metal_melter.max_fuel = 8000
 
@@ -389,7 +391,7 @@ if minetest.get_modpath("pipeworks") ~= nil then
 end
 
 minetest.register_node("metal_melter:metal_melter", {
-	description = "Metal Melter",
+	description = S("Metal Melter"),
 	tiles = {
 		"melter_side.png"..tube_entry, "melter_side.png"..tube_entry,
 		"melter_side.png"..tube_entry, "melter_side.png"..tube_entry,
