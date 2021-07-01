@@ -155,4 +155,11 @@ minetest.register_craft({
     cooktime = 3,
 })
 
+minetest.register_craft({
+    type = "cooking",
+    output = "default:lava_source",
+    recipe = "default:stone",
+    cooktime = 60,
+})
+
 -- Pipeworks

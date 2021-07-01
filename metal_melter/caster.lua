@@ -19,7 +19,7 @@ metal_caster.casts = {
 local metal_cache = {}
 
 function metal_caster.get_metal_caster_formspec(water, metal)
-	local metal_formspec = "tooltip[6.68,0;0.8,2.45;No Molten Metal]"
+	local metal_formspec = "tooltip[6.68,0;0.8,2.45;"..S("No Molten Metal").."]"
 
 	if metal ~= nil then
 		metal_formspec = "tooltip[6.68,0;0.8,2.45;"..fluid_lib.buffer_to_string(metal).."]"
@@ -32,6 +32,7 @@ function metal_caster.get_metal_caster_formspec(water, metal)
 		"list[context;cast;2.7,0.2;1,1;]"..
 		"image[2.7,1.35;1,1;gui_furnace_arrow_bg.png^[transformFY]"..
 		"list[context;output;2.7,2.5;1,1;]"..
+		"checkbox[2.7,3.5;auto;Auto;true]"..
 		"image[0.08,2.5;1,1;metal_melter_gui_bucket.png]"..
 		"list[context;coolant;0.08,2.5;1,1;]"..
 		metal_melter.fluid_bar(0.08, 0, water)..
@@ -395,13 +396,13 @@ local function caster_node_timer(pos, elapsed)
 	meta:set_string("metal_fluid", metal.fluid)
 	meta:set_string("water_fluid", "default:water_source")
 
-	local infotext = "Metal Caster\n"
+	local infotext = S("Metal Caster").."\n"
 	infotext = infotext .. fluid_lib.buffer_to_string(coolant) .. "\n"
 	
 	if metal and metal.fluid ~= "" then
 		infotext = infotext .. fluid_lib.buffer_to_string(metal)
 	else
-		infotext = infotext .. "No Molten Metal"
+		infotext = infotext .. S("No Molten Metal")
 	end
 
 	meta:set_string("infotext", infotext)
@@ -421,12 +422,13 @@ local function on_construct(pos)
 	inv:set_size('coolant', 1)
 	inv:set_size('bucket_in', 1)
 	inv:set_size('bucket_out', 1)
+	meta:set_int("auto",1)
 
 	-- Water source block
 	meta:set_string('water_fluid', 'default:water_source')
 
 	-- Default infotext
-	meta:set_string("infotext", "Metal Caster Inactive")
+	meta:set_string("infotext", S("Metal Caster Inactive"))
 end
 
 -- Register a new cast
@@ -435,7 +437,7 @@ function metal_caster.register_cast(name, data)
 	local castname = mod..":"..name.."_cast"
 
 	minetest.register_craftitem(castname, {
-		description     = data.description.." Cast\n\nMaterial Cost: "..data.cost,
+		description     = data.description.." "..S("Cast").."\n\n"..S("Material Cost")..": "..data.cost,
 		inventory_image = "caster_"..name.."_cast.png",
 		stack_max       = 1,
 		groups          = {tinker_cast=1}
@@ -455,6 +457,13 @@ local function on_receive_fields(pos, formname, fields, sender)
 	end
 
 	local meta = minetest.get_meta(pos)
+	if fields["auto"]~=nil then
+		if fields["auto"]~=true then
+		    meta:set_int("auto",1)
+		else
+			meta:set_int("auto",0)
+		end
+	end
 	if fields["dump"] then
 		meta:set_int('dump', 1)
 		minetest.get_node_timer(pos):start(1.0)

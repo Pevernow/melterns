@@ -302,13 +302,13 @@ local function melter_node_timer(pos, elapsed)
 	meta:set_string("metal_fluid", metal.fluid)
 	meta:set_string("lava_fluid", "default:lava_source")
 
-	local infotext = "Metal Melter\n"
+	local infotext = S("Metal Melter").."\n"
 	infotext = infotext .. fluid_lib.buffer_to_string(lava) .. "\n"
 	
 	if metal and metal.fluid ~= "" then
 		infotext = fluid_lib.buffer_to_string(metal)
 	else
-		infotext = infotext .. "No Molten Metal"
+		infotext = infotext .. S("No Molten Metal")
 	end
 
 	if lava.amount > 144 then
@@ -339,7 +339,7 @@ local function on_construct(pos)
 	meta:set_string('lava_fluid', 'default:lava_source')
 
 	-- Default infotext
-	meta:set_string("infotext", "Metal Melter Inactive")
+	meta:set_string("infotext", S("Metal Melter Inactive"))
 end
 
 local function can_dig(pos, player)
